@@ -1,0 +1,31 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+html, body, html * {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #ccc;
+    box-sizing: border-box;
+}
+
+.calculator {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 30px;
+    width: 500px;
+    height: 600px;
+    padding: 5px;
+}
+
+.screen {
+    text-align: right;
+    font-size: 26px;
+    margin-top: 20px;
+    border-radius: 30px;
+    height: 60px;
+    width: 450px;
+}
+
+* {
+    border: solid 1px black;
+}
