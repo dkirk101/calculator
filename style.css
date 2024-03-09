@@ -1,6 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
 html, body, html * {
-  font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    border: solid 1px black;
 }
 
 body {
@@ -60,6 +64,9 @@ body {
 }
 
 .numBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100px;
 }
 
@@ -67,8 +74,4 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-}
-
-* {
-    border: solid 1px black;
 }
