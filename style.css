@@ -3,12 +3,16 @@ html, body, html * {
     font-family: 'Roboto', sans-serif;
 }
 
-* {
+/* * {
     border: solid 1px black;
-}
+} */
 
 body {
     box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
 }
 
 .calculator {
@@ -59,19 +63,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex: 1;
-    justify-content: space-evenly;
+    justify-content: space-between;
     gap: 5px;
 }
 
 .numBtn {
     display: flex;
+    flex-grow: 1;
     justify-content: center;
     align-items: center;
     width: 100px;
-}
-
-.fnBtnsVert {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }
