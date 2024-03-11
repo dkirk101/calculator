@@ -7,20 +7,35 @@
 
 // Receive and store 2 different numbers and an operator from the keypad input.
 
-const firstNum = [1, 0, 3];
+// const firstNum;
+let num1;
 let secondNum = 0;
 let selectedOperator = null;
 
-const screenValue = document.querySelector('.screen');
-screenValue.textContent = firstNum;
+const screen = document.querySelector('.screen');
+const firstChoice = document.querySelectorAll('.numBtn');
+const operator = document.querySelectorAll('.fnBtn');
 
-const firstChoice = document.querySelector('.buttons');
-
-firstChoice.addEventListener('click', (event) => {
-    let target = event.target;
-    currentValue = target.getAttribute(target.value);
-    console.log(target);
+operator.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        console.log(btn.innerText);
+        
+        switch (btn.innerText) {
+            case 'C': 
+                clear();
+            case '+':
+                
+        }
+    })
 });
+
+firstChoice.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+       screen.textContent += btn.innerText;
+    })
+})
+
+
 
 // First number will be entered, but stored only when user selects an operator.
 // Both numbers will be displayed on the screen as they are inputted.
@@ -28,3 +43,6 @@ firstChoice.addEventListener('click', (event) => {
 // using the = button.
 // The = will determine what function to call based on the selected operator
 
+function clear() {
+    screen.textContent = '';
+}
