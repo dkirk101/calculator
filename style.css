@@ -8,7 +8,16 @@ html, body, html * {
 } */
 
 body {
+    display: flex;
     box-sizing: border-box;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: lightslategrey;
+    padding: 0;
+    margin: 0;
+    
+
 }
 
 button {
@@ -31,10 +40,12 @@ button {
     justify-content: right;
     align-items: center;
     background-color: #ffffff;
-    font-size: 54px;
+    font-size: 34px;
+    word-wrap: break-word;
+    word-break: break-all;
     border-radius: 30px;
     height: 120px;
-    margin: 50px;
+    margin: 50px 50px 0 50px;
     padding-right: 30px;
 }
 
@@ -43,19 +54,20 @@ button {
     flex-direction: column;
     flex-wrap: wrap;
     flex: 1 1 0;
-    width: 350px;
     align-self: center;
+    margin: 50px;
 }
 
 .fnBtns {
     display: flex;
     height: 50px;
     justify-content: space-evenly;
+    gap: 5px;
+    margin-bottom: 5px;
 }
 
 .fnBtn {
-    width: 25px;
-    border-radius: 20px;
+    flex: 1;
     text-align: center;
 }
 
@@ -68,9 +80,12 @@ button {
 }
 
 .numBtn {
-    display: flex;
     flex-grow: 1;
     justify-content: center;
     align-items: center;
+    width: 100px;
+}
+
+.numBtn.fnBtn {
     width: 100px;
 }
