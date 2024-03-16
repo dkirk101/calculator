@@ -37,8 +37,8 @@ button {
 
 .screen {
     display: flex;
-    justify-content: right;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     background-color: #ffffff;
     font-size: 34px;
     word-wrap: break-word;
@@ -47,6 +47,10 @@ button {
     height: 120px;
     margin: 50px 50px 0 50px;
     padding-right: 30px;
+}
+
+.top-screen, .bottom-screen {
+    text-align: right;
 }
 
 .buttons {
@@ -67,7 +71,7 @@ button {
 }
 
 .fnBtn {
-    flex: 1;
+    flex-grow: 1;
     text-align: center;
 }
 
@@ -86,6 +90,6 @@ button {
     width: 100px;
 }
 
-.numBtn.fnBtn {
+#equals, #dot {
     width: 100px;
 }
