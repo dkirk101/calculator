@@ -5,44 +5,76 @@
 // Example: user can do 2 + 2 + 2, but 2 + 2 will be evaluated and then 4 + 2
 
 
-// Receive and store 2 different numbers and an operator from the keypad input.
+let firstNum = '';
+let operator = '';
+let secondNum = '';
 
-// const firstNum;
-let num1;
-let secondNum = 0;
-let selectedOperator = null;
+let topScreen = document.querySelector('.top-screen');
+let bottomScreen = document.querySelector('.bottom-screen');
+const numbers = document.querySelectorAll('.numBtn');
+const operatorFns = document.querySelectorAll('.fnBtn');
+const operate = document.querySelector('#equals');
+const dot = document.querySelector('#dot');
+const clearBtn = document.querySelector('#clear');
 
-const screen = document.querySelector('.screen');
-const firstChoice = document.querySelectorAll('.numBtn');
-const operator = document.querySelectorAll('.fnBtn');
 
-operator.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-        console.log(btn.innerText);
-        
-        switch (btn.innerText) {
-            case 'C': 
-                clear();
-            case '+':
-                
-        }
-    })
+clearBtn.addEventListener('click', () => {
+    console.clear();
+    clear();
 });
 
-firstChoice.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-       screen.textContent += btn.innerText;
+
+operatorFns.forEach(btn => btn.addEventListener('click', (event) => {
+        handleOperators(btn.innerText)
+        topScreen.textContent = secondNum + " " + operator;
+        bottomScreen.textContent = '';
     })
+);
+    
+numbers.forEach(btn => btn.addEventListener('click', (e) => {
+        handleNums(btn.innerText)
+        bottomScreen.textContent = firstNum;
 })
+);
 
+equals.addEventListener('click', () => {
+    calculate();
+    topScreen.textContent = '';
+    bottomScreen.textContent = secondNum;
+});
 
+function handleOperators(op){
+    console.log(op);
+    operator = op;
+    secondNum = firstNum;
+    firstNum = '';
+}
 
-// First number will be entered, but stored only when user selects an operator.
-// Both numbers will be displayed on the screen as they are inputted.
-// The second number will be stored once the user executes the calculation by
-// using the = button.
-// The = will determine what function to call based on the selected operator
+function handleNums(nums) {
+    console.log(nums);
+    if (firstNum.length <= 14) {
+        firstNum += nums;
+    }
+};
 
 function clear() {
-    screen.textContent = '';
+    firstNum = '';
+    secondNum = '';
+    operator = '';
+    bottomScreen.textContent = '';
+    topScreen.textContent = '';
+}
+
+function calculate() {
+    secondNum = Number(secondNum)
+    firstNum = Number(firstNum);
+
+    if(operator === '+') {
+        console.log(secondNum += firstNum);
+        
+    }
+
+    secondNum = secondNum.toString();
+    firstNum = firstNum.toString();
+
 }
