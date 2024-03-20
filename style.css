@@ -95,3 +95,7 @@ button {
 #equals, #dot {
     width: 100px;
 }
+
+#dot {
+    font-weight: 700;
+}
