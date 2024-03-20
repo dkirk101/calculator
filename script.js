@@ -69,11 +69,20 @@ function calculate() {
     secondNum = Number(secondNum)
     firstNum = Number(firstNum);
 
-    if(operator === '+') {
-        console.log(secondNum += firstNum);
-        
-    }
-
+    switch (operator) {
+        case '+':
+            secondNum += firstNum;
+                return
+        case '-':
+            secondNum -= firstNum;
+                return
+        case '*':
+            secondNum *= firstNum;
+                return
+        case '/':
+            secondNum /= firstNum;
+                return
+} 
     secondNum = secondNum.toString();
     firstNum = firstNum.toString();
 
